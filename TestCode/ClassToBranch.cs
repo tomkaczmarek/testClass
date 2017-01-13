@@ -8,9 +8,9 @@ namespace TestCode
 {
     public class ClassToBranch
     {
-        public string HelloBranch()
+        public void HelloBranch(string s)
         {
-            return "Hello to branch";
+            Console.WriteLine("Hello branch {0}", s);
         }
     }
 }

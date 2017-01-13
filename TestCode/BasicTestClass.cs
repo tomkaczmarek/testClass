@@ -10,6 +10,9 @@ namespace TestCode
     {
         protected IList<int> ageList;
 
+
+        public BasicTestClass() { }
+
         public BasicTestClass(int a, int b)
         {
             a = 10;

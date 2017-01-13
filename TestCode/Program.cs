@@ -10,7 +10,7 @@ namespace TestCode
     {
         static void Main(string[] args)
         {
-            bool switchEx = false;
+            bool switchEx = true;
 
             if(switchEx)
             {
@@ -78,6 +78,10 @@ namespace TestCode
                 int arg2 = 10;
                 Console.WriteLine(arg1 + arg2);
             }
+
+            TestClass test2 = new TestClass();
+
+            test2.ReflectionBase();
 
             Console.ReadLine();
             Console.ReadLine();

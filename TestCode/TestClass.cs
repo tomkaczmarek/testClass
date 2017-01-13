@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Reflection;
 
 namespace TestCode
 {
@@ -14,6 +15,8 @@ namespace TestCode
         public event MyDelegate MyEventHandler;
 
         public int A { get; set; }
+
+        public TestClass() { }
 
         public TestClass(int a, int b):base(a, b)
         {
@@ -50,6 +53,15 @@ namespace TestCode
 
             Console.WriteLine("Lambda: {0}", func(5, 6));
             Console.WriteLine("Lambda2 {0}", action);
+        }
+
+        public void ReflectionBase()
+        {
+            Type type = Type.GetType("TestCode.ClassToBranch");
+            var instance = Activator.CreateInstance(type);
+            MethodInfo info = type.GetMethod("HelloBranch");
+            info.Invoke(instance, new object[] {"Tomek"});
+            
         }
     }
 }
