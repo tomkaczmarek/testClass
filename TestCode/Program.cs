@@ -79,7 +79,8 @@ namespace TestCode
                 Console.WriteLine(arg1 + arg2);
             }
 
-          
+
+            ClassToBranch cs = new ClassToBranch();
            
             Console.ReadLine();
 
