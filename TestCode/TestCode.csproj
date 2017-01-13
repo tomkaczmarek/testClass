@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AbstractTestClass.cs" />
     <Compile Include="BasicTestClass.cs" />
+    <Compile Include="ClassToBranch.cs" />
     <Compile Include="ITest.cs" />
     <Compile Include="MyStructur.cs" />
     <Compile Include="Program.cs" />
