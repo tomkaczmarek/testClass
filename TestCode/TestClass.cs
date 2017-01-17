@@ -73,7 +73,7 @@ namespace TestCode
 
         public void DefaulTest(int maxSize, DateTime b = default(DateTime), int c = 5)
         {
-            Console.WriteLine("{0}, {1}, {2}", maxSize, b, c);
+            Console.WriteLine("{0}, {1}, {2}", maxSize, b, c);           
         }
     }
 }
