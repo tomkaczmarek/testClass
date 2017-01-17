@@ -7,8 +7,7 @@ using System.Reflection;
 namespace TestCode
 {
     public class TestClass : BasicTestClass, ITest
-    {
-        
+    { 
 
         public delegate string MyDelegate(string s, int i);
 
@@ -16,12 +15,20 @@ namespace TestCode
 
         public int A { get; set; }
 
-        public TestClass() { }
+        public TestClass()
+        {
+            Console.WriteLine("Konstruktor niestatyczny");
+        }
 
         public TestClass(int a, int b):base(a, b)
         {
             A = a;
             b = 15;          
+        }
+
+        static TestClass()
+        {
+            Console.WriteLine("Konstruktor statyczny");
         }
 
         public void TestMethod()
@@ -62,6 +69,11 @@ namespace TestCode
             MethodInfo info = type.GetMethod("HelloBranch");
             info.Invoke(instance, new object[] {"Tomek"});
             
+        }
+
+        public void DefaulTest(int maxSize, DateTime b = default(DateTime), int c = 5)
+        {
+            Console.WriteLine("{0}, {1}, {2}", maxSize, b, c);
         }
     }
 }

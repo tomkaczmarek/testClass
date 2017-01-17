@@ -10,7 +10,7 @@ namespace TestCode
     {
         static void Main(string[] args)
         {
-            bool switchEx = true;
+            bool switchEx = false;
 
             if(switchEx)
             {
@@ -64,24 +64,30 @@ namespace TestCode
 
                 FizzBuzz();
 
-                DateTime dt = new DateTime();
                 TestClass test = null;
                 Console.WriteLine("Test - {0}", test);
 
                 test = new TestClass(4, 4);
 
                 test.Lambda(test.TestMethod);
-            }
-            unchecked
-            {
-                int arg1 = Int32.MaxValue;
-                int arg2 = 10;
-                Console.WriteLine(arg1 + arg2);
+
+                unchecked
+                {
+                    int arg1 = Int32.MaxValue;
+                    int arg2 = 10;
+                    Console.WriteLine(arg1 + arg2);
+                }
             }
 
-            TestClass test2 = new TestClass();
+            TestClass test2, test3;
+
+            test2 = new TestClass();
+            test3 = new TestClass();
 
             test2.ReflectionBase();
+
+            test2.DefaulTest(maxSize:4);
+
 
             Console.ReadLine();
             Console.ReadLine();
