@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
+using TestCode.Exceptions;
 
 namespace TestCode
 {
@@ -75,9 +76,14 @@ namespace TestCode
         {
             try
             {
+                bool throwException = true;
                 if (maxSize == 4)
-                    ExceptionTestMethod(true);
+                    ExceptionTestMethod(throwException);
             }
+            //catch(InvalidOperationException ioEx)
+            //{
+            //    throw new Exception("Jakiś problem z robotem ...", ioEx);
+            //}
             catch (Exception ex)
             {
                 Console.WriteLine("Zapis do dziennika {0}", ex.Message);
@@ -85,6 +91,7 @@ namespace TestCode
             }
             finally
             {
+                Console.WriteLine("Finally w test class");
                 Console.WriteLine("{0}, {1}, {2}", maxSize, b, c);
             }
 
@@ -95,7 +102,8 @@ namespace TestCode
         {
             if(b)
             {
-                throw new InvalidOperationException("Nie tędy droga");
+                //throw new InvalidOperationException("Nie tędy droga");
+                throw new TestException("TestException execute");
             }
         }
     }

@@ -48,6 +48,7 @@
     <Compile Include="AnotherClassToBranch.cs" />
     <Compile Include="BasicTestClass.cs" />
     <Compile Include="ClassToBranch.cs" />
+    <Compile Include="Exceptions\TestException.cs" />
     <Compile Include="ITest.cs" />
     <Compile Include="MyStructur.cs" />
     <Compile Include="Program.cs" />

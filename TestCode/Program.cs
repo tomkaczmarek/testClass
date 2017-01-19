@@ -96,7 +96,14 @@ namespace TestCode
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Jesteśmy w Exception {0}", ex.Message);
+                Console.WriteLine("Jesteśmy w Exception");
+                Exception current = ex;
+                while(current !=null)
+                {
+                    Console.WriteLine(current.Message);
+                    current = current.InnerException;
+                }
+                
             }
             finally
             {
