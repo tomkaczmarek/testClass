@@ -73,7 +73,30 @@ namespace TestCode
 
         public void DefaulTest(int maxSize, DateTime b = default(DateTime), int c = 5)
         {
-            Console.WriteLine("{0}, {1}, {2}", maxSize, b, c);           
+            try
+            {
+                if (maxSize == 4)
+                    ExceptionTestMethod(true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Zapis do dziennika {0}", ex.Message);
+                throw;
+            }
+            finally
+            {
+                Console.WriteLine("{0}, {1}, {2}", maxSize, b, c);
+            }
+
+        
+        }
+
+        public void ExceptionTestMethod(bool b)
+        {
+            if(b)
+            {
+                throw new InvalidOperationException("Nie tędy droga");
+            }
         }
     }
 }

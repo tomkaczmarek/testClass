@@ -79,15 +79,31 @@ namespace TestCode
                 }
             }
 
-            TestClass test2, test3;
+            try
+            {
+                TestClass test2, test3;
 
-            test2 = new TestClass();
-            test3 = new TestClass();
+                test2 = new TestClass();
+                test3 = new TestClass();
 
-            test2.ReflectionBase();
+                test2.ReflectionBase();
 
-            test2.DefaulTest(maxSize:4);
-
+                test2.DefaulTest(maxSize: 4);
+            }
+            catch (InvalidOperationException ioex)
+            {
+                Console.WriteLine("Wystąpił błąd: {0}", ioex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Jesteśmy w Exception {0}", ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Czekam w finally");
+            }
+            
+          
 
             Console.ReadLine();
             Console.ReadLine();
