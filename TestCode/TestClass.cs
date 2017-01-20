@@ -4,6 +4,7 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 using TestCode.Exceptions;
+using System.IO;
 
 namespace TestCode
 {
@@ -106,6 +107,60 @@ namespace TestCode
             {
                 //throw new InvalidOperationException("Nie tędy droga");
                 throw new TestException("TestException execute");
+            }
+        }
+
+        public IEnumerable<string> AddNumbers(IEnumerable<string> names)
+        {
+            Console.WriteLine("Początek AddNumber");
+            int i = 0;
+
+            foreach (string currentNumber in names)
+            {
+                Console.WriteLine("W pętli addnumbers");
+                yield return string.Format("{0}-{1}", i, currentNumber);
+                i++;
+            }
+
+            Console.WriteLine("Koniec AddNumber");
+        }
+
+        public IEnumerable<string> GetAllFilesOnDriver(string driver)
+        {
+            string fullDriverName = driver;
+
+            IEnumerable<string> files = null;
+            IEnumerable<string> directories = null;
+
+            try
+            {
+                files = Directory.EnumerateFiles(fullDriverName);
+                directories = Directory.EnumerateDirectories(fullDriverName);
+            }
+            catch(UnauthorizedAccessException)
+            {
+                Console.WriteLine("Błąd dostepu");
+            }
+            catch(InvalidOperationException ex)
+            {
+                Console.WriteLine("Błąd: {0}", ex.Message);
+            }
+            if (files != null)
+            {
+                foreach (string file in files)
+                {
+                    yield return file;
+                }
+            }
+            if(directories != null)
+            {
+                foreach(string directory in directories)
+                {
+                    foreach(string subdirectory in GetAllFilesOnDriver(directory))
+                    {
+                        yield return subdirectory;
+                    }
+                }
             }
         }
     }

@@ -88,6 +88,67 @@ namespace TestCode
                     test2.ReflectionBase();
 
                     test2.DefaulTest(maxSize: 4);
+
+                    TestClass t1 = new TestClass();
+                    TestClass t2 = new TestClass();
+
+                    t2 = t1;
+
+                    t2.A = 200;
+
+                    t1.A = 100;
+
+                    Console.WriteLine(t2.A);
+
+                    int[] tab = { 2, 1, 3, 5 };
+                    foreach (int i in tab)
+                        Console.WriteLine(i);
+
+                    Array.Sort(tab);
+
+                    foreach (int i in tab)
+                        Console.WriteLine(i);
+
+                    ListTest li = new ListTest();
+                    li.Test();
+
+                    GenericClass<TestClass> testClass = new GenericClass<TestClass>();
+                    testClass.Add(new TestClass() { A = 100 });
+                    testClass.Add(new TestClass() { A = 200 });
+                    testClass[1].A = 1200;
+
+                    foreach (TestClass t5 in testClass)
+                    {
+                        Console.WriteLine(t5.A);
+                    }
+                    GenericClass<ListTest> lisTest = new GenericClass<ListTest>();
+
+                    foreach (ListTest lt in lisTest)
+                    {
+
+                    }
+
+                    string[] events = { "test1", "test2", "test3" };
+
+                    IEnumerable<string> myEvents = AddNumbers(events);
+
+                    TestClass t6 = new TestClass();
+                    Console.WriteLine("Wywołujemy metodę Addnumber");
+                    var ienumerable = t6.AddNumbers(events);
+                    Console.WriteLine("Zaczynamy");
+                    foreach (string s in ienumerable)
+                    {
+                        Console.WriteLine("W pętli głównej {0}", s);
+                    }
+                    Console.WriteLine("Kończymy");
+
+                    var directory = t6.GetAllFilesOnDriver(@"F:\");
+
+                    foreach (string s in directory)
+                    {
+                        Console.WriteLine(s);
+                    }
+
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -110,48 +171,8 @@ namespace TestCode
                 }
             }
 
-            TestClass t1 = new TestClass();
-            TestClass t2 = new TestClass();
+            
 
-            t2 = t1;
-
-            t2.A = 200;
-
-            t1.A = 100;
-
-            Console.WriteLine(t2.A);
-
-            int[] tab = { 2, 1, 3, 5 };
-            foreach (int i in tab)
-                Console.WriteLine(i);
-
-            Array.Sort(tab);
-
-            foreach (int i in tab)
-                Console.WriteLine(i);
-
-            ListTest li = new ListTest();
-            li.Test();
-
-            GenericClass<TestClass> testClass = new GenericClass<TestClass>();
-            testClass.Add(new TestClass() { A = 100 });
-            testClass.Add(new TestClass() { A = 200 });
-            testClass[1].A = 1200;
-
-            foreach(TestClass t in testClass)
-            {
-                Console.WriteLine(t.A);
-            }
-            GenericClass<ListTest> lisTest = new GenericClass<ListTest>();
-
-            foreach(ListTest lt in lisTest)
-            {
-
-            }
-
-
-            Console.ReadLine();
-            Console.ReadLine();
             Console.ReadLine();
 
         }
@@ -209,6 +230,24 @@ namespace TestCode
                     Console.WriteLine("{0} - Buzz", i);
                 else
                     Console.WriteLine(i);
+            }
+        }
+
+        static IEnumerable<string> GetString(IEnumerable<TestClass> t2)
+        {
+            foreach(TestClass t in t2)
+            {
+                yield return string.Format("{0}", t.A);
+            }
+        }
+
+        static IEnumerable<string> AddNumbers(IEnumerable<string> names)
+        {
+            int i = 0;
+
+            foreach(string currentNumber in names)
+            {
+                yield return string.Format("{0}-{1}", i, currentNumber);
             }
         }
     }
