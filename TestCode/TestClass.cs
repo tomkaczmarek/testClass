@@ -16,6 +16,8 @@ namespace TestCode
 
         public int A { get; set; }
 
+        IList<TestClass> testClassList = new List<TestClass>();
+
         public TestClass()
         {
             Console.WriteLine("Konstruktor niestatyczny");

@@ -77,40 +77,78 @@ namespace TestCode
                     int arg2 = 10;
                     Console.WriteLine(arg1 + arg2);
                 }
-            }
 
-            try
-            {
-                TestClass test2, test3;
-
-                test2 = new TestClass();
-                test3 = new TestClass();
-
-                test2.ReflectionBase();
-
-                test2.DefaulTest(maxSize: 4);
-            }
-            catch (InvalidOperationException ioex)
-            {
-                Console.WriteLine("Wystąpił błąd: {0}", ioex.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Jesteśmy w Exception");
-                Exception current = ex;
-                while(current !=null)
+                try
                 {
-                    Console.WriteLine(current.Message);
-                    current = current.InnerException;
+                    TestClass test2, test3;
+
+                    test2 = new TestClass();
+                    test3 = new TestClass();
+
+                    test2.ReflectionBase();
+
+                    test2.DefaulTest(maxSize: 4);
                 }
-                
+                catch (InvalidOperationException ioex)
+                {
+                    Console.WriteLine("Wystąpił błąd: {0}", ioex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Jesteśmy w Exception");
+                    Exception current = ex;
+                    while (current != null)
+                    {
+                        Console.WriteLine(current.Message);
+                        current = current.InnerException;
+                    }
+
+                }
+                finally
+                {
+                    Console.WriteLine("Czekam w finally");
+                }
             }
-            finally
+
+            TestClass t1 = new TestClass();
+            TestClass t2 = new TestClass();
+
+            t2 = t1;
+
+            t2.A = 200;
+
+            t1.A = 100;
+
+            Console.WriteLine(t2.A);
+
+            int[] tab = { 2, 1, 3, 5 };
+            foreach (int i in tab)
+                Console.WriteLine(i);
+
+            Array.Sort(tab);
+
+            foreach (int i in tab)
+                Console.WriteLine(i);
+
+            ListTest li = new ListTest();
+            li.Test();
+
+            GenericClass<TestClass> testClass = new GenericClass<TestClass>();
+            testClass.Add(new TestClass() { A = 100 });
+            testClass.Add(new TestClass() { A = 200 });
+            testClass[1].A = 1200;
+
+            foreach(TestClass t in testClass)
             {
-                Console.WriteLine("Czekam w finally");
+                Console.WriteLine(t.A);
             }
-            
-          
+            GenericClass<ListTest> lisTest = new GenericClass<ListTest>();
+
+            foreach(ListTest lt in lisTest)
+            {
+
+            }
+
 
             Console.ReadLine();
             Console.ReadLine();
