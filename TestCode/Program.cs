@@ -136,7 +136,7 @@ namespace TestCode
                     Console.WriteLine("Wywołujemy metodę Addnumber");
                     var ienumerable = t6.AddNumbers(events);
                     Console.WriteLine("Zaczynamy");
-                    foreach (string s in ienumerable)
+                    foreach (string z in ienumerable)
                     {
                         Console.WriteLine("W pętli głównej {0}", s);
                     }
@@ -144,7 +144,7 @@ namespace TestCode
 
                     var directory = t6.GetAllFilesOnDriver(@"F:\");
 
-                    foreach (string s in directory)
+                    foreach (string z in directory)
                     {
                         Console.WriteLine(s);
                     }
