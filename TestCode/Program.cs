@@ -149,7 +149,12 @@ namespace TestCode
                         Console.WriteLine(s);
                     }
 
-                    
+                    TestClass t7 = new TestClass();
+                    string str = t7.Ext();
+
+                    LinqTest ltest = new LinqTest();
+                    ltest.SelectManyTest();
+
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -172,11 +177,30 @@ namespace TestCode
                 }
             }
 
-            TestClass t7 = new TestClass();
-            string str = t7.Ext();
+            object abc = "abc";
+            object abc2 = "abc";
+            TestClass tc1 = new TestClass();
+            TestClass tc2 = new TestClass();
+            tc1 = tc2;
 
-            LinqTest ltest = new LinqTest();
-            ltest.SelectManyTest();
+            if(tc1 == tc2)
+            {
+                Console.WriteLine("Pasują1");
+            }
+            if(object.ReferenceEquals(tc1,tc2))
+            {
+                Console.WriteLine("Pasują2");
+            }
+
+            if(object.Equals(abc, abc2))
+            {
+                Console.WriteLine("Pasują3 ref a{0}, ref{1}", abc.GetHashCode(), abc2.GetHashCode());
+            }
+            if(abc == abc2)
+            {
+                Console.WriteLine("Pasują4");
+            }
+            
 
             Console.ReadLine();
 
