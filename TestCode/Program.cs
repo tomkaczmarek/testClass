@@ -149,6 +149,7 @@ namespace TestCode
                         Console.WriteLine(s);
                     }
 
+                    
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -171,7 +172,11 @@ namespace TestCode
                 }
             }
 
-            
+            TestClass t7 = new TestClass();
+            string str = t7.Ext();
+
+            LinqTest ltest = new LinqTest();
+            ltest.SelectManyTest();
 
             Console.ReadLine();
 
@@ -250,5 +255,6 @@ namespace TestCode
                 yield return string.Format("{0}-{1}", i, currentNumber);
             }
         }
+
     }
 }
