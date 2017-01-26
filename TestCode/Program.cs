@@ -128,26 +128,7 @@ namespace TestCode
 
                     }
 
-                    string[] events = { "test1", "test2", "test3" };
-
-                    IEnumerable<string> myEvents = AddNumbers(events);
-
-                    TestClass t6 = new TestClass();
-                    Console.WriteLine("Wywołujemy metodę Addnumber");
-                    var ienumerable = t6.AddNumbers(events);
-                    Console.WriteLine("Zaczynamy");
-                    foreach (string z in ienumerable)
-                    {
-                        Console.WriteLine("W pętli głównej {0}", s);
-                    }
-                    Console.WriteLine("Kończymy");
-
-                    var directory = t6.GetAllFilesOnDriver(@"F:\");
-
-                    foreach (string z in directory)
-                    {
-                        Console.WriteLine(s);
-                    }
+                    
 
                     TestClass t7 = new TestClass();
                     string str = t7.Ext();
@@ -177,30 +158,9 @@ namespace TestCode
                 }
             }
 
-            object abc = "abc";
-            object abc2 = "abc";
-            TestClass tc1 = new TestClass();
-            TestClass tc2 = new TestClass();
-            tc1 = tc2;
-
-            if(tc1 == tc2)
-            {
-                Console.WriteLine("Pasują1");
-            }
-            if(object.ReferenceEquals(tc1,tc2))
-            {
-                Console.WriteLine("Pasują2");
-            }
-
-            if(object.Equals(abc, abc2))
-            {
-                Console.WriteLine("Pasują3 ref a{0}, ref{1}", abc.GetHashCode(), abc2.GetHashCode());
-            }
-            if(abc == abc2)
-            {
-                Console.WriteLine("Pasują4");
-            }
             
+
+
 
             Console.ReadLine();
 
@@ -280,5 +240,87 @@ namespace TestCode
             }
         }
 
+        static void EqualsRef()
+        {
+            string abc = "abc";
+            string abc2 = "abc";
+            TestClass tc1 = new TestClass();
+            TestClass tc2 = new TestClass();
+            tc1 = tc2;
+            string abc3 = "abc3";
+            string abc4 = abc3.Substring(0, 3);
+
+            TestClass tc3 = new TestClass();
+            TestClass tc4 = new TestClass();
+            tc3.A = 5;
+            tc4.A = 5;
+
+            if (tc1 == tc2)
+            {
+                Console.WriteLine("Pasują1");
+            }
+            if (object.ReferenceEquals(tc1, tc2))
+            {
+                Console.WriteLine("Pasują2");
+            }
+
+            if (object.Equals(abc, abc2))
+            {
+                Console.WriteLine("Pasują3 ref {0}, ref {1}", abc.GetHashCode(), abc2.GetHashCode());
+            }
+            if (abc == abc2)
+            {
+                Console.WriteLine("Pasują4");
+            }
+            if (abc == abc4)
+            {
+                Console.WriteLine("Pasują5");
+            }
+            if (object.ReferenceEquals(abc, abc4))
+            {
+                Console.WriteLine("Pasują6");
+            }
+
+            if (object.Equals(abc, abc4))
+            {
+                Console.WriteLine("Pasują7 ref {0}, ref {1}", abc.GetHashCode(), abc4.GetHashCode());
+            }
+            if (tc3.A == tc4.A)
+            {
+                Console.WriteLine("Pasują8 ref {0}, ref {1}", tc3.A.GetHashCode(), tc4.A.GetHashCode());
+            }
+            if (tc3.A.Equals(tc4.A))
+            {
+                Console.WriteLine("Pasują9");
+            }
+            if (object.ReferenceEquals(tc3.A, tc4.A))
+            {
+                Console.WriteLine("Pasują10");
+            }
+        }
+
+        static void YieldEx()
+        {
+            string[] events = { "test1", "test2", "test3" };
+
+            IEnumerable<string> myEvents = AddNumbers(events);
+
+            TestClass t6 = new TestClass();
+            Console.WriteLine("Wywołujemy metodę Addnumber");
+            var ienumerable = t6.AddNumbers(events);
+            Console.WriteLine("Zaczynamy");
+            foreach (string z in ienumerable)
+            {
+                Console.WriteLine("W pętli głównej {0}", s);
+            }
+            Console.WriteLine("Kończymy");
+
+            var directory = t6.GetAllFilesOnDriver(@"F:\");
+
+            foreach (string z in directory)
+            {
+                Console.WriteLine(s);
+            }
+        }
     }
 }
