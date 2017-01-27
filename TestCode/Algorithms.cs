@@ -25,12 +25,12 @@ namespace TestCode
             for(int i = 1; i<= n; i++)
             {
                 z = z * i;
-                //if (i == 1)
-                //    Console.Write(i);
-                //else if (i > 1 && i < n)
-                //    Console.Write("*{0}", i);
-                //else
-                //    Console.Write("*{0}=", i);
+                if (i == 1)
+                    Console.Write(i);
+                else if (i > 1 && i < n)
+                    Console.Write("*{0}", i);
+                else
+                    Console.Write("*{0}=", i);
             }
             return z;
         }
