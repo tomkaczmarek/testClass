@@ -136,6 +136,10 @@ namespace TestCode
                     LinqTest ltest = new LinqTest();
                     ltest.SelectManyTest();
 
+                    AlgorithmsTest();
+
+                    StreamTest();
+
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -158,7 +162,7 @@ namespace TestCode
                 }
             }
 
-            AlgorithmsTest();
+            
 
 
 
@@ -349,6 +353,19 @@ namespace TestCode
             Console.WriteLine(Algorithms.NWW(192, 348));
 
 
+
+        }
+
+        static void StreamTest()
+        {
+            Streams.Streams streams = new Streams.Streams();
+
+            string encrypt, descrypt;
+
+            encrypt = streams.EncryptString("Tomek");
+            descrypt = streams.DescriptString(encrypt);
+
+            Console.WriteLine("Text: Tomek{0}Encrypt: {1}{0}Descript: {2}", Environment.NewLine, encrypt, descrypt);
 
         }
     }
