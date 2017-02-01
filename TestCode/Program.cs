@@ -139,6 +139,7 @@ namespace TestCode
                     AlgorithmsTest();
 
                     StreamTest();
+             
 
                 }
                 catch (InvalidOperationException ioex)
@@ -165,6 +166,8 @@ namespace TestCode
 
 
             FunWithBoolean();
+
+            ActionTest();
 
             Console.ReadLine();
 
@@ -372,6 +375,18 @@ namespace TestCode
         static void FunWithBoolean()
         {
             Boolean.BooleanTest.Test();
+        }
+
+        static void ActionTest()
+        {
+            Providers.TestProviders test = new Providers.TestProviders();
+            string s = "test";
+            test.RunProvider(() => TestAction(s));
+        }
+
+        static void TestAction(string t)
+        {
+            Console.WriteLine(t);
         }
     }
 }

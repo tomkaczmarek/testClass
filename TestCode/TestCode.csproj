@@ -59,6 +59,7 @@
     <Compile Include="MyStructur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\TestProviders.cs" />
     <Compile Include="Streams\Streams.cs" />
     <Compile Include="TestClass.cs" />
   </ItemGroup>
