@@ -139,7 +139,11 @@ namespace TestCode
                     AlgorithmsTest();
 
                     StreamTest();
-             
+
+                    FunWithBoolean();
+
+                    ActionTest();
+
 
                 }
                 catch (InvalidOperationException ioex)
@@ -164,10 +168,8 @@ namespace TestCode
             }
 
 
-
-            FunWithBoolean();
-
-            ActionTest();
+            XmlTest();
+            
 
             Console.ReadLine();
 
@@ -387,6 +389,12 @@ namespace TestCode
         static void TestAction(string t)
         {
             Console.WriteLine(t);
+        }
+
+        static void XmlTest()
+        {
+            Xml.XmlTest xml = new Xml.XmlTest();
+            xml.CreateXml();
         }
     }
 }
