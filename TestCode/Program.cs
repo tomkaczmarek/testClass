@@ -162,9 +162,9 @@ namespace TestCode
                 }
             }
 
-            
 
 
+            FunWithBoolean();
 
             Console.ReadLine();
 
@@ -367,6 +367,11 @@ namespace TestCode
 
             Console.WriteLine("Text: Tomek{0}Encrypt: {1}{0}Descript: {2}", Environment.NewLine, encrypt, descrypt);
 
+        }
+
+        static void FunWithBoolean()
+        {
+            Boolean.BooleanTest.Test();
         }
     }
 }
