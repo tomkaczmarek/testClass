@@ -16,8 +16,9 @@ namespace ChatHost
             {
                 host.Open();
                 Console.WriteLine("Open");
+                Console.ReadKey();
             }
-            Console.ReadLine();
+
         }
     }
 }
