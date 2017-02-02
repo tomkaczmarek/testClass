@@ -12,6 +12,6 @@ namespace ChatServerLibrary
     public interface IChatService
     {
         [OperationContract]
-        void PostNote(string from, string note);
+        void DoWork();
     }
 }
