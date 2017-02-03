@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatService.cs" />
+    <Compile Include="IChatClient.cs" />
     <Compile Include="IChatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
