@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestCode.Threads;
 
 namespace TestCode
 {
@@ -60,9 +61,9 @@ namespace TestCode
 
                 Console.WriteLine(typeof(string).Assembly.ImageRuntimeVersion);
 
-                Console.WriteLine(PrimeNumber(96));
+                Console.WriteLine(Algorithms.Algorithms.PrimeNumber(96));
 
-                FizzBuzz();
+                Algorithms.Algorithms.FizzBuzz();
 
                 TestClass test = null;
                 Console.WriteLine("Test - {0}", test);
@@ -167,19 +168,14 @@ namespace TestCode
                 }
             }
 
-            TestClass testclass = new TestClass();
-
-            var ty1 = testclass.GetType();
-            var ty2 = typeof(TestClass);
-
-            if(ty1 == ty2)
-            {
-
-            }
+            ThreadsFun();
 
             Console.ReadLine();
 
         }
+
+
+        #region Old
 
         static public void Change(out int x)
         {
@@ -199,47 +195,18 @@ namespace TestCode
         static dynamic DynamicMethod(dynamic a, dynamic b)
         {
             dynamic result = a + b;
-            return result; 
+            return result;
         }
         static string NonDynamicMethod(int a, string b)
         {
             return a.ToString() + b;
         }
 
-        public static bool PrimeNumber(int x)
-        {
-            if (x < 2) return false;
-            if (x == 2) return true;
-
-            for (int i = 2; i < x; i++)
-            {
-                if (x % i == 0)
-                    return false;
-            }
-            return true;
-        }
-
-        public static void FizzBuzz()
-        {
-
-            for(int i = 1; i <=100; i++)
-            {
-                bool fizz = i % 3 == 0;
-                bool buzz = i % 5 == 0;
-                if (fizz && buzz)
-                    Console.WriteLine("{0} - FizzBuzz", i);
-                else if(fizz)
-                    Console.WriteLine("{0} - Fizz", i);
-                else if(buzz)
-                    Console.WriteLine("{0} - Buzz", i);
-                else
-                    Console.WriteLine(i);
-            }
-        }
+        
 
         static IEnumerable<string> GetString(IEnumerable<TestClass> t2)
         {
-            foreach(TestClass t in t2)
+            foreach (TestClass t in t2)
             {
                 yield return string.Format("{0}", t.A);
             }
@@ -249,7 +216,7 @@ namespace TestCode
         {
             int i = 0;
 
-            foreach(string currentNumber in names)
+            foreach (string currentNumber in names)
             {
                 yield return string.Format("{0}-{1}", i, currentNumber);
             }
@@ -340,30 +307,28 @@ namespace TestCode
 
         static void AlgorithmsTest()
         {
-            System.Diagnostics.Stopwatch w,z;
-          
+            System.Diagnostics.Stopwatch w, z;
+
             Console.WriteLine("Silnia rekurencyjnie");
             w = System.Diagnostics.Stopwatch.StartNew();
-            Console.WriteLine(Algorithms.StrongRec(21));
+            Console.WriteLine(Algorithms.Algorithms.StrongRec(21));
             w.Stop();
             Console.WriteLine(w.ElapsedMilliseconds);
 
             z = System.Diagnostics.Stopwatch.StartNew();
             Console.WriteLine("Silnia iteracyjnie");
-            Console.WriteLine(Algorithms.StrongIte(21));
+            Console.WriteLine(Algorithms.Algorithms.StrongIte(21));
             z.Stop();
             Console.WriteLine(z.ElapsedMilliseconds);
 
             Console.WriteLine("Liczby fibonnaciego");
-            Console.WriteLine(Algorithms.FiboRec(6));
-            Console.WriteLine(Algorithms.FiboIte(3));
-            Console.WriteLine(Algorithms.FiboIte(6));
+            Console.WriteLine(Algorithms.Algorithms.FiboRec(6));
+            Console.WriteLine(Algorithms.Algorithms.FiboIte(3));
+            Console.WriteLine(Algorithms.Algorithms.FiboIte(6));
             Console.WriteLine("Algorytm Euklidesa");
-            Console.WriteLine(Algorithms.NWD(24, 6));
+            Console.WriteLine(Algorithms.Algorithms.NWD(24, 6));
             Console.WriteLine("NWW");
-            Console.WriteLine(Algorithms.NWW(192, 348));
-
-
+            Console.WriteLine(Algorithms.Algorithms.NWW(192, 348));
 
         }
 
@@ -402,5 +367,17 @@ namespace TestCode
             Xml.XmlTest xml = new Xml.XmlTest();
             xml.CreateXml();
         }
+
+        #endregion
+
+        #region 2017/02/07
+
+        static void ThreadsFun()
+        {
+            ThreadsTest threadsTest = new ThreadsTest();
+            threadsTest.Start();
+        }
+
+        #endregion
     }
 }

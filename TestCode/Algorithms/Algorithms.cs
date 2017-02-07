@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace TestCode
+namespace TestCode.Algorithms
 {
     public static class Algorithms
     {
@@ -76,6 +76,37 @@ namespace TestCode
         public static int NWW(int a, int b)
         {
             return (a * b) / NWD(a, b);
+        }
+
+        public static bool PrimeNumber(int x)
+        {
+            if (x < 2) return false;
+            if (x == 2) return true;
+
+            for (int i = 2; i < x; i++)
+            {
+                if (x % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
+        public static void FizzBuzz()
+        {
+
+            for (int i = 1; i <= 100; i++)
+            {
+                bool fizz = i % 3 == 0;
+                bool buzz = i % 5 == 0;
+                if (fizz && buzz)
+                    Console.WriteLine("{0} - FizzBuzz", i);
+                else if (fizz)
+                    Console.WriteLine("{0} - Fizz", i);
+                else if (buzz)
+                    Console.WriteLine("{0} - Buzz", i);
+                else
+                    Console.WriteLine(i);
+            }
         }
     }
 }
