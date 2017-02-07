@@ -62,6 +62,7 @@
     <Compile Include="Providers\TestProviders.cs" />
     <Compile Include="Streams\Streams.cs" />
     <Compile Include="TestClass.cs" />
+    <Compile Include="Threads\ThreadsTest.cs" />
     <Compile Include="Xml\XmlTest.cs" />
   </ItemGroup>
   <ItemGroup>

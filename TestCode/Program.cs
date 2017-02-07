@@ -144,7 +144,7 @@ namespace TestCode
 
                     ActionTest();
 
-
+                    XmlTest();
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -167,9 +167,15 @@ namespace TestCode
                 }
             }
 
+            TestClass testclass = new TestClass();
 
-            XmlTest();
-            
+            var ty1 = testclass.GetType();
+            var ty2 = typeof(TestClass);
+
+            if(ty1 == ty2)
+            {
+
+            }
 
             Console.ReadLine();
 
