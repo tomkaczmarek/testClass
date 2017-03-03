@@ -47,6 +47,8 @@
     <Compile Include="AbstractTestClass.cs" />
     <Compile Include="Algorithms\Algorithms.cs" />
     <Compile Include="AnotherClassToBranch.cs" />
+    <Compile Include="Attributes\MyClass.cs" />
+    <Compile Include="Attributes\TestAttribute.cs" />
     <Compile Include="BasicTestClass.cs" />
     <Compile Include="Boolean\BooleanTest.cs" />
     <Compile Include="ClassToBranch.cs" />
