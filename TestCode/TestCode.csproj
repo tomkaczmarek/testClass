@@ -52,6 +52,7 @@
     <Compile Include="BasicTestClass.cs" />
     <Compile Include="Boolean\BooleanTest.cs" />
     <Compile Include="ClassToBranch.cs" />
+    <Compile Include="CSharp7\CSharp7Class.cs" />
     <Compile Include="Exceptions\TestException.cs" />
     <Compile Include="ExtensionMethod.cs" />
     <Compile Include="GenericClass.cs" />
