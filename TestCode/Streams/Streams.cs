@@ -11,7 +11,7 @@ namespace TestCode.Streams
 
         public string EncryptString(string text)
         {
-            string encryptText;
+            string encryptText = string.Empty;
 
             SelectKeyAndIV(out key, out iv);
 

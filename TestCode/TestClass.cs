@@ -13,8 +13,6 @@ namespace TestCode
 
         public delegate string MyDelegate(string s, int i);
 
-        public event MyDelegate MyEventHandler;
-
         public int A { get; set; }
 
         IList<TestClass> testClassList = new List<TestClass>();

@@ -146,6 +146,8 @@ namespace TestCode
                     ActionTest();
 
                     XmlTest();
+
+                    ThreadsFun();
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -168,7 +170,9 @@ namespace TestCode
                 }
             }
 
-            ThreadsFun();
+            AwaitTest awaittest = new AwaitTest();
+            awaittest.FooTest();
+            awaittest.FooTest2();
 
             Console.ReadLine();
 
