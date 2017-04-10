@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{365B8CA8-A810-4A38-80FD-99D8E378A44C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkTest", "EntityFrameworkTest\EntityFrameworkTest.csproj", "{43B61843-570F-42B8-A4EF-E7294B810D9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityTest", "EntityTest\EntityTest.csproj", "{274E7378-AC75-4C7A-8465-6E4D36EEE59D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{365B8CA8-A810-4A38-80FD-99D8E378A44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{365B8CA8-A810-4A38-80FD-99D8E378A44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{365B8CA8-A810-4A38-80FD-99D8E378A44C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43B61843-570F-42B8-A4EF-E7294B810D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43B61843-570F-42B8-A4EF-E7294B810D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43B61843-570F-42B8-A4EF-E7294B810D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43B61843-570F-42B8-A4EF-E7294B810D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274E7378-AC75-4C7A-8465-6E4D36EEE59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274E7378-AC75-4C7A-8465-6E4D36EEE59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274E7378-AC75-4C7A-8465-6E4D36EEE59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274E7378-AC75-4C7A-8465-6E4D36EEE59D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
