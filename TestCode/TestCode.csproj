@@ -68,6 +68,9 @@
     <Compile Include="SOLID\SRP\Modem.cs" />
     <Compile Include="Streams\Streams.cs" />
     <Compile Include="TestClass.cs" />
+    <Compile Include="Test\AbstractClass.cs" />
+    <Compile Include="Test\Class.cs" />
+    <Compile Include="Test\Interface1.cs" />
     <Compile Include="Threads\AwaitTest.cs" />
     <Compile Include="Threads\ThreadsTest.cs" />
     <Compile Include="Xml\XmlTest.cs" />

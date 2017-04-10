@@ -38,6 +38,22 @@ namespace TestCode.Threads
             action.Invoke();
         }
 
+
+        public async void MyFoo()
+        {
+            Task<string> task = GetStringResult();
+            string s = await task;
+
+        }
+
+        private async Task<string> GetStringResult()
+        {
+            await Task.Run(() => 
+            {
+                Console.WriteLine("test");
+            });
+            return "string";
+        }
     }
 
     public static class TupleExtension
@@ -55,4 +71,5 @@ namespace TestCode.Threads
         }
 
     }
+
 }
