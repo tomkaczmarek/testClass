@@ -15,6 +15,8 @@ namespace AutoFacTest
             server.RegisterContainer();
 
             server.Execute();
+
+            server.ShutDown();
         }
     }
 }
