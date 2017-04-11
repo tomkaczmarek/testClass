@@ -5,14 +5,14 @@ namespace EntityTest.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EntityTest.NamesContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EntityTest.EntityTestContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(EntityTest.NamesContext context)
+        protected override void Seed(EntityTest.EntityTestContext context)
         {
             //  This method will be called after migrating to the latest version.
 

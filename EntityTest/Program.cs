@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityTest.DataAccess;
 
 namespace EntityTest
 {
@@ -10,19 +11,22 @@ namespace EntityTest
     {
         static void Main(string[] args)
         {
-            using (var n = new NamesContext())
+            Products p = new Products();
+            OrderItem orderItem = new OrderItem();
+            if (false)
             {
-                Names name = new Names() { Name = "Bart4", LastName="Test",IsLocal=true, BirthDate=DateTime.Now};
-                Subject s1 = new Subject() { Name = "subject1" };
-                Subject s2 = new Subject() { Name = "subject2" };
-                name.Subject.Add(s1);
-                name.Subject.Add(s2);
+                orderItem = new OrderItem() { Number = "PO1234" };
+                Product p1 = new Product() { BasePrice = 5.1, Name = "Baton", Description = "Dobry baton", Tax = 2.1f };
+                DiscountProducts discountp = new DiscountProducts() { Discount = "Discount" };
+                Invoice invoice = new Invoice() { IssueDate = DateTime.UtcNow, IssuerName = "Tomek", ReceiverName = "Name" };
 
-                n.Names.Add(name);
-
-
-                n.SaveChanges();
+                p1.DiscountProducts.Add(discountp);
+                orderItem.Products = p1;
+                orderItem.Invoices = invoice;
+                p.Add(orderItem);
             }
+            orderItem = p.Select();
+          
         }
     }
 }
