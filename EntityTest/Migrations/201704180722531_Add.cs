@@ -3,7 +3,7 @@ namespace EntityTest.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Add1 : DbMigration
+    public partial class Add : DbMigration
     {
         public override void Up()
         {

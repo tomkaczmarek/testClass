@@ -54,9 +54,9 @@
     <Compile Include="DataAccess\Users.cs" />
     <Compile Include="DiscountProducts.cs" />
     <Compile Include="Invoice.cs" />
-    <Compile Include="Migrations\201704110959513_Add1.cs" />
-    <Compile Include="Migrations\201704110959513_Add1.Designer.cs">
-      <DependentUpon>201704110959513_Add1.cs</DependentUpon>
+    <Compile Include="Migrations\201704180722531_Add.cs" />
+    <Compile Include="Migrations\201704180722531_Add.Designer.cs">
+      <DependentUpon>201704180722531_Add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Names.cs" />
@@ -72,8 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704110959513_Add1.resx">
-      <DependentUpon>201704110959513_Add1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704180722531_Add.resx">
+      <DependentUpon>201704180722531_Add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

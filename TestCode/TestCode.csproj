@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
     <Compile Include="Exceptions\TestException.cs" />
     <Compile Include="ExtensionMethod.cs" />
     <Compile Include="GenericClass.cs" />
+    <Compile Include="Html\TagsGenerator.cs" />
     <Compile Include="ITest.cs" />
     <Compile Include="LinqTest.cs" />
     <Compile Include="ListTest.cs" />

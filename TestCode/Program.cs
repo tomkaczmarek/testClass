@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestCode.Threads;
+using TestCode.Html;
 
 namespace TestCode
 {
@@ -148,6 +149,11 @@ namespace TestCode
                     XmlTest();
 
                     ThreadsFun();
+
+
+                    AwaitTest awaittest = new AwaitTest();
+                    awaittest.FooTest();
+                    awaittest.FooTest2();
                 }
                 catch (InvalidOperationException ioex)
                 {
@@ -170,12 +176,11 @@ namespace TestCode
                 }
             }
 
-            AwaitTest awaittest = new AwaitTest();
-            awaittest.FooTest();
-            awaittest.FooTest2();
 
+            Html.TagsGenerator tags = new TagsGenerator();
+            Console.WriteLine(tags.Generate("test"));
             Console.ReadLine();
-
+           
         }
 
 
