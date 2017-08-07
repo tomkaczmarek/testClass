@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Threading;
 
 namespace WindowsFormsTest
 {
@@ -17,25 +19,49 @@ namespace WindowsFormsTest
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            List<string> words = new List<string>();
-            Font f = new Font("", 7);         
 
-            words.Add("te");
-            words.Add("[.]");
-            Class2 c = new Class2();
-            c.CheckKeyword(this.richTextBox1, words, 0, Color.Gray, this.ForeColor, f, this.Font);
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            do
+            {
+                await Run();
+
+                do
+                {
+                    await Timer();
+                }
+                while (DateTime.Now.Minute != 13 && DateTime.Now.Second != 0);
+            }
+            while(true);
+                
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async Task Run()
         {
-            string text = richTextBox1.Text;
+            label1.Text = "1";
+            await Go1();
+            label1.Text = "2";
+            await Go1();
         }
 
-        private void richTextBox1_MouseClick(object sender, MouseEventArgs e)
+        private async Task<string> Go1()
         {
 
+            return await Task.Run(() =>
+            {
+                Thread.Sleep(2000);
+                return string.Empty;
+            });
         }
+        private async Task<string> Timer()
+        {
+
+            return await Task.Run(() =>
+            {
+                Thread.Sleep(1000);
+                return string.Empty;
+            });
+        }
+
     }
 }
